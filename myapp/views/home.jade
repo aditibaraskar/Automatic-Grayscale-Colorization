@@ -1,0 +1,171 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    meta(name='description', content='')
+    meta(name='author', content='')
+    title COLOR ME - Automatic GrayScale Colorization  
+    // Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/
+    link(href='/stylesheets/bootstrap.min.css', rel='stylesheet')
+    // Custom CSS
+    link(href='/stylesheets/freelancer.css', rel='stylesheet')
+    // Custom Fonts
+    link(href='/stylesheets/font-awesome.min.css', rel='stylesheet', type='text/css')
+    link(href='http://fonts.googleapis.com/css?family=Montserrat:400,700', rel='stylesheet', type='text/css')
+    link(href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic', rel='stylesheet', type='text/css')
+    // HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries
+    // WARNING: Respond.js doesn't work if you view the page via file://
+    //if lt IE 9
+      script(src='https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js')
+      script(src='https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js')
+  body#page-top.index
+    // Navigation
+    nav.navbar.navbar-default.navbar-fixed-top
+      .container
+        // Brand and toggle get grouped for better mobile display
+        .navbar-header.page-scroll
+          button.navbar-toggle(type='button', data-toggle='collapse', data-target='#bs-example-navbar-collapse-1')
+            span.sr-only Toggle navigation
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          a.navbar-brand(href='#page-top') COLOR ME
+        // Collect the nav links, forms, and other content for toggling
+        #bs-example-navbar-collapse-1.collapse.navbar-collapse
+          ul.nav.navbar-nav.navbar-right
+            li.hidden
+              a(href='#page-top')
+            li.page-scroll
+              a(href='#portfolio') How it Works
+            //li.page-scroll
+            //  a(href='#about') About
+            li.page-scroll
+              a(href='#contact') Try Now
+        // /.navbar-collapse
+      // /.container-fluid
+    // Header
+    header
+      .container
+        .row
+          .col-lg-12
+            img.img-responsive(src='/images/profile.png', alt='')
+            .intro-text
+              span.name COLOR ME
+              hr.star-light
+              span.skills UPLOAD      - TRAIN - COLOR
+    // Portfolio Grid Section
+    section#portfolio
+      .container
+        .row
+          .col-lg-12.text-center
+            h2 HOW DOES IT WORK?
+            hr.star-primary
+        .row
+          .col-sm-4.portfolio-item
+            .portfolio-link(href='#portfolioModal1', data-toggle='modal')
+              .caption
+                .caption-content
+                  i.fa.fa-search-plus.fa-3x
+              img.img-responsive(src='/images/ppg/ppg0.jpg', alt='')
+            h3(style='text-align:center;') UPLOAD A SIMILAR TRAINING IMAGE
+          .col-sm-4.portfolio-item
+            .portfolio-link(href='#portfolioModal2', data-toggle='modal')
+              .caption
+                .caption-content
+                  i.fa.fa-search-plus.fa-3x
+              img.img-responsive(src='/images/ppg/ppg2.jpg', alt='')
+            h3(style='text-align:center;') INPUT YOUR TARGET GRAYSCALE IMAGE
+          .col-sm-4.portfolio-item
+            .portfolio-link(href='#portfolioModal3', data-toggle='modal')
+              .caption
+                .caption-content
+                  i.fa.fa-search-plus.fa-3x
+              img.img-responsive(src='/images/ppg/ppg1.jpg', alt='')
+            h3(style='text-align:center;') SOMETHING COOL ABOUT AUTOMATIC COLORIZATION
+    // About Section
+    //section#about.success
+    //  .container
+    //    .row
+    //      .col-lg-12.text-center
+    //        h2 About
+    //        hr.star-light
+    //    .row
+    //      .col-lg-4.col-lg-offset-2
+    //        p
+    //          | Freelancer is a free bootstrap theme created by Start Bootstrap. The download includes the complete source files including HTML, CSS, and JavaScript as well as optional LESS stylesheets for easy customization.
+    //      .col-lg-4
+    //        p
+    //          | Whether you're a student looking to showcase your work, a professional looking to attract clients, or a graphic artist looking to share your projects, this template is the perfect starting point!
+    //      .col-lg-8.col-lg-offset-2.text-center
+    //        a.btn.btn-lg.btn-outline(href='#')
+    //          i.fa.fa-download
+    //          |  Download Theme
+    // Contact Section
+    section#contact
+      .container
+        .row
+          .col-lg-12.text-center
+            h2 Try now!
+            hr.star-primary
+        .row
+          .col-lg-8.col-lg-offset-2
+            form#contactForm(action='/mail/upload', enctype='multipart/form-data', method='post')
+              .row.control-group
+                .form-group
+                  label Upload a training image
+                  input(multiple='multiple',name='upload1',type='file', placeholder='Training Image', required='', data-validation-required-message='Please upload a valid image file.', accept='image/*')
+                  p.help-block.text-danger
+          
+              .row.control-group
+                .form-group
+                  label Upload target grayscale image
+                  input(multiple='multiple',name='upload2',type='file', placeholder='Target Image', required='', data-validation-required-message='Please upload a valid image file.', accept='image/*')
+                  p.help-block.text-danger
+              //.row.control-group
+              //  .form-group
+              //    label Email Address
+              //    input(type='email', placeholder='Email Address',name='eid', required='', data-validation-required-message='Please enter your email address.')
+              //    p.help-block.text-danger
+              //.col-sm-4.portfolio-item
+              //  .portfolio-link(href='#portfolioModal1', data-toggle='modal')
+              //    img.img-responsive(src='/images/ppg/ppg0.jpg', alt='')
+              //  h3(style='text-align:center;') Training Image
+              //.col-sm-4.portfolio-item
+              //  .portfolio-link(href='#portfolioModal1', data-toggle='modal')
+              //    img.img-responsive(src='/images/ppg/ppg0.jpg', alt='')
+              //  h3(style='text-align:center;') Target Image
+              //.col-sm-4.portfolio-item
+              //  .portfolio-link(href='#portfolioModal1', data-toggle='modal')
+              //    img.img-responsive(src='/images/ppg/ppg0.jpg', alt='')
+              //  h3(style='text-align:center;') Colored Image
+              br
+              #success
+              .row
+                .form-group.col-xs-12
+                  button.btn.btn-success.btn-lg(type='submit') Color it Now
+    // Footer
+    footer.text-center
+      .footer-below
+        .container
+          .row
+            .col-lg-12
+              | Copyright © Your Website 2014
+    // Scroll to Top Button (Only visible on small and extra-small screen sizes)
+    .scroll-top.page-scroll.visible-xs.visble-sm
+      a.btn.btn-primary(href='#page-top')
+        i.fa.fa-chevron-up
+    // jQuery
+    script(src='js/jquery.js')
+    // Bootstrap Core JavaScript
+    script(src='js/bootstrap.min.js')
+    // Plugin JavaScript
+    script(src='http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js')
+    script(src='js/classie.js')
+    script(src='js/cbpAnimatedHeader.js')
+    // Contact Form JavaScript
+    //script(src='js/jqBootstrapValidation.js')
+    //script(src='js/contact_me.js')
+    // Custom Theme JavaScript
+    script(src='js/freelancer.js')
